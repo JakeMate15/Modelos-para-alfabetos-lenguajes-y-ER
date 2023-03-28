@@ -17,5 +17,6 @@ bool esSubsecuencia(std::string,std::string);
 void generaLenguaje(std::set<std::string>&,const std::set<char>&,int,int);
 void imprimeLenguaje(const std::set<std::string>&);
 void difLenguaje(const std::set<std::string>&,const std::set<std::string>&,std::set<std::string>&);
+void potencia();
 
 #endif

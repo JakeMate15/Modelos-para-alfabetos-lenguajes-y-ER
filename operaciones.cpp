@@ -101,3 +101,11 @@ void imprimeLenguaje(const ss &lenguaje){
     }
     cout << endl;
 }
+
+void difLenguaje(const ss &l1, const ss &l2, ss &ld){
+    for(string s: l1){
+        if(!l2.count(s)){
+            ld.insert(s);
+        }
+    }
+}

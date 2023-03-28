@@ -4,7 +4,7 @@ using namespace std;
 
 int main(){
     set<char>alfabeto;
-    set<string> l1,l2;
+    set<string> l1,l2,ld;
     //string w1,w2;
 
     
@@ -41,6 +41,9 @@ int main(){
 
     imprimeLenguaje(l1);
     imprimeLenguaje(l2);
+
+    difLenguaje(l1,l2,ld);
+    imprimeLenguaje(ld);
 
     return 0;
 }
