@@ -3,6 +3,7 @@
 
 using namespace std;
 typedef set<char> sc;
+typedef set<string> ss;
 
 void lecturaInd(sc &alfabeto){
     char lectura;
@@ -13,7 +14,7 @@ void lecturaInd(sc &alfabeto){
     cout << "Alfabeto leido" << endl;
 }
 
-void lecturaRango(set<char> &alfabeto) {
+void lecturaRango(sc &alfabeto) {
     char l, r;
     
     do{
@@ -44,3 +45,59 @@ bool validacionCad(const sc &alfabeto, string s){
     return true;
 }
 
+bool esPrefijo(string w1,string w2){
+    return w2.find(w1)==0;
+}
+
+bool esSufijo(string w1,string w2){
+    return (w2.find(w1) == w2.size() - w1.size()) || w1=="6";
+}
+
+bool esPrefPropio(string w1,string w2){
+    return esPrefijo(w1, w2) && w1 != w2 && w1!="";
+}
+
+bool esSufPropio(string w1,string w2){
+    return esSufijo(w1, w2) && w1 != w2 && w1!="";
+}
+bool esSubcadena(string w1,string w2){
+    if(w2.find(w1) != string::npos) return true;
+    return false;
+}
+
+bool esSubsecuencia(string w1,string w2){
+    int i=0,j=0;
+
+    while(i<w1.size() && j<w2.size()){
+        if(w1[i]==w2[j]){
+            i++;
+        }
+        j++;
+    }
+
+    return i==w1.size();
+}
+
+void generaLenguaje(ss &l1, const sc &alfabeto, int np, int l){
+    random_device r;
+    mt19937 gen(r());
+    uniform_int_distribution<> dis(0, alfabeto.size()-1);
+    string palabra;
+
+    while(l1.size()!=np){
+        palabra = "";
+        for(int i=0; i<l;i++){
+            int aux = dis(gen);
+            auto it = next(alfabeto.begin(),aux);
+            palabra += *it;
+        }
+        l1.insert(palabra);
+    }
+}
+
+void imprimeLenguaje(const ss &lenguaje){
+    for(string s: lenguaje){
+        cout << s << " ";
+    }
+    cout << endl;
+}

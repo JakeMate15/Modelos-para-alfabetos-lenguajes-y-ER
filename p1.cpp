@@ -4,10 +4,13 @@ using namespace std;
 
 int main(){
     set<char>alfabeto;
-    string w1,w2;
+    set<string> l1,l2;
+    //string w1,w2;
 
+    
     //lecturaInd(alfabeto);
     lecturaRango(alfabeto);
+    /*
     impresionAlfabeto(alfabeto);
 
     do{
@@ -18,8 +21,26 @@ int main(){
         cout << "Ingresa la cadena 2: ";
         cin>>w2;
     }while(!validacionCad(alfabeto,w2));
-        
+    */
+    
+    /*
+    string w1 = "ola";
+    string w2 = "hola";
+    cout << esPrefijo(w1,w2) << endl;
+    cout << esPrefPropio(w1,w2) << endl;
+    cout << esSufijo(w1,w2) << endl;
+    cout << esSufPropio(w1,w2) << endl;
+    cout << esSubcadena(w1,w2) << endl;
+    cout << esSubsecuencia(w1,w2) << endl;
+    */
 
+    int np,l;
+    cin>>np>>l;
+    generaLenguaje(l1,alfabeto,np,l);
+    generaLenguaje(l2,alfabeto,np,l);
+
+    imprimeLenguaje(l1);
+    imprimeLenguaje(l2);
 
     return 0;
 }
