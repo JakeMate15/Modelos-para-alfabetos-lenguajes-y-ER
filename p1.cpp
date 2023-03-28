@@ -4,15 +4,15 @@ using namespace std;
 
 int main(){
     set<char>alfabeto;
-    set<string> l1,l2,ld;
+    set<string> l1,l2,ld,pot,potn;
     //string w1,w2;
 
     
     //lecturaInd(alfabeto);
     lecturaRango(alfabeto);
-    /*
+    
     impresionAlfabeto(alfabeto);
-
+    /*
     do{
         cout << "Ingresa la cadena 1: ";
         cin>>w1;
@@ -34,6 +34,7 @@ int main(){
     cout << esSubsecuencia(w1,w2) << endl;
     */
 
+    /*
     int np,l;
     cin>>np>>l;
     generaLenguaje(l1,alfabeto,np,l);
@@ -44,6 +45,13 @@ int main(){
 
     difLenguaje(l1,l2,ld);
     imprimeLenguaje(ld);
+    */
+
+    potencia(alfabeto,pot,3,"");
+    imprimeLenguaje(pot);
+
+    potencia(alfabeto,potn,-3,"");
+    imprimeLenguaje(potn);
 
     return 0;
 }

@@ -109,3 +109,24 @@ void difLenguaje(const ss &l1, const ss &l2, ss &ld){
         }
     }
 }
+
+void potencia(const sc &alfabeto, ss &res, int n,string pref){
+    if(n > 5 || n < -5){
+        cout << "Rango no válido" << endl;
+        return;
+    }
+
+    if(n == 0){
+        res.insert(pref);
+        return;
+    }
+
+    if(n > 0){
+        for(char c: alfabeto){
+            potencia(alfabeto,res,n-1,pref+c);
+        }
+    }
+
+
+}
+

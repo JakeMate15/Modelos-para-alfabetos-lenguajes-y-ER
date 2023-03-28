@@ -2,21 +2,28 @@
 #define OPERACIONES_H
 
 #include <set>
+#include <unordered_set>
 #include <string>
 
-void lecturaInd(std::set<char>&);
-void lecturaRango(std::set<char>&);
-void impresionAlfabeto(const std::set<char>&);
-bool validacionCad(const std::set<char>&,std::string);
-bool esPrefijo(std::string,std::string);
-bool esSufijo(std::string,std::string);
-bool esPrefPropio(std::string,std::string);
-bool esSufPropio(std::string,std::string);
-bool esSubcadena(std::string,std::string);
-bool esSubsecuencia(std::string,std::string);
-void generaLenguaje(std::set<std::string>&,const std::set<char>&,int,int);
-void imprimeLenguaje(const std::set<std::string>&);
-void difLenguaje(const std::set<std::string>&,const std::set<std::string>&,std::set<std::string>&);
-void potencia();
+typedef std::set<char> sc;
+typedef std::unordered_set<std::string> uss;
+typedef std::set<std::string> ss;
+typedef std::string string;
+
+void lecturaInd(sc&);
+void lecturaRango(sc&);
+void impresionAlfabeto(const sc&);
+bool validacionCad(const sc&, string);
+bool esPrefijo(string, string);
+bool esSufijo(string, string);
+bool esPrefPropio(string, string);
+bool esSufPropio(string, string);
+bool esSubcadena(string, string);
+bool esSubsecuencia(string, string);
+void generaLenguaje(ss&, const sc&, int, int);
+void imprimeLenguaje(const ss&);
+void imprimePotencia(const uss&);
+void difLenguaje(const ss&, const ss&, ss&);
+void potencia(const sc&, ss&, int, string);
 
 #endif
