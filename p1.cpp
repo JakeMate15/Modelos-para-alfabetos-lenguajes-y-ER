@@ -63,19 +63,39 @@ void potenciaAlf(sc alfabeto, int n){
         return;
     }
 
-    cout << "El alfabeto elevado a " << n << " es:\n";
+    cout << "\nEl alfabeto elevado a " << n << " es:\n";
     if(n==0){
         cout << " " << endl;
         return;
     }
 
     ss aux;
-    potencia(alfabeto,aux,n,"");
+    potencia(alfabeto,aux,abs(n),"");
+
     if(n>0){
-        imprimeLenguaje(aux);
+        for(string s: aux){
+            cout << s << " ";
+        }
+        cout << endl;
     }
     else{
-        potN(aux);
+        
+        for (string s : aux) {
+            string auxS = s;
+            reverse(auxS.begin(), auxS.end());
+            cout << auxS << " ";
+        }
+
+        /*
+        auto it = aux.end();
+        it--;
+        while(it!=aux.begin()){
+            cout << *it << " ";
+            it--;
+        }
+        */
+
+        cout << endl;
     }
 }
 

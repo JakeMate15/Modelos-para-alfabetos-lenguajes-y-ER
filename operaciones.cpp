@@ -96,13 +96,6 @@ void generaLenguaje(ss &l1, const sc &alfabeto, int np, int l){
     }
 }
 
-void imprimeLenguaje(const ss &lenguaje){
-    for(string s: lenguaje){
-        cout << s << " ";
-    }
-    cout << endl;
-}
-
 void difLenguaje(const ss &l1, const ss &l2, ss &ld){
     for(string s: l1){
         if(!l2.count(s)){
