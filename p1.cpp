@@ -2,9 +2,12 @@
 #include "operaciones.h"
 using namespace std;
 
+void potenciaAlf(sc,int);
+void menu();
+
 int main(){
-    set<char>alfabeto;
-    set<string> l1,l2,ld,pot,potn;
+    sc alfabeto;
+    ss l1,l2,ld,pot,potn;
     //string w1,w2;
 
     
@@ -47,12 +50,35 @@ int main(){
     imprimeLenguaje(ld);
     */
 
-    potencia(alfabeto,pot,3,"");
-    imprimeLenguaje(pot);
-
-    potencia(alfabeto,potn,-3,"");
-    imprimeLenguaje(potn);
+    potenciaAlf(alfabeto,3);
+    potenciaAlf(alfabeto,-3);
 
     return 0;
 }
 
+
+void potenciaAlf(sc alfabeto, int n){
+    if(n>5 || n<-5){
+        cout << "Rango no valido" << endl;
+        return;
+    }
+
+    cout << "El alfabeto elevado a " << n << " es:\n";
+    if(n==0){
+        cout << " " << endl;
+        return;
+    }
+
+    ss aux;
+    potencia(alfabeto,aux,n,"");
+    if(n>0){
+        imprimeLenguaje(aux);
+    }
+    else{
+        potN(aux);
+    }
+}
+
+void menu(){
+
+}

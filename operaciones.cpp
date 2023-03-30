@@ -60,6 +60,7 @@ bool esPrefPropio(string w1,string w2){
 bool esSufPropio(string w1,string w2){
     return esSufijo(w1, w2) && w1 != w2 && w1!="";
 }
+
 bool esSubcadena(string w1,string w2){
     if(w2.find(w1) != string::npos) return true;
     return false;
@@ -126,7 +127,14 @@ void potencia(const sc &alfabeto, ss &res, int n,string pref){
             potencia(alfabeto,res,n-1,pref+c);
         }
     }
-
-
 }
 
+void potN(const ss &p){
+    for (const auto& s : p) {
+        string aux = s;
+        reverse(aux.begin(), aux.end());
+        cout << aux << endl;
+    }
+
+    cout << endl;
+}
