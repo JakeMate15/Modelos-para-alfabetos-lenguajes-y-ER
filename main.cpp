@@ -14,46 +14,7 @@ ss l1,l2,ld,pot,potn;
 string w1,w2;
 
 int main(){
-
     menu();
-    
-    /*
-    do{
-        cout << "Ingresa la cadena 1: ";
-        cin>>w1;
-    }while(!validacionCad(alfabeto,w1));
-    do{
-        cout << "Ingresa la cadena 2: ";
-        cin>>w2;
-    }while(!validacionCad(alfabeto,w2));
-    */
-    
-    /*
-    string w1 = "ola";
-    string w2 = "hola";
-    cout << esPrefijo(w1,w2) << endl;
-    cout << esPrefPropio(w1,w2) << endl;
-    cout << esSufijo(w1,w2) << endl;
-    cout << esSufPropio(w1,w2) << endl;
-    cout << esSubcadena(w1,w2) << endl;
-    cout << esSubsecuencia(w1,w2) << endl;
-    */
-
-    /*
-    int np,l;
-    cin>>np>>l;
-    generaLenguaje(l1,alfabeto,np,l);
-    generaLenguaje(l2,alfabeto,np,l);
-
-    imprimeLenguaje(l1);
-    imprimeLenguaje(l2);
-
-    difLenguaje(l1,l2,ld);
-    imprimeLenguaje(ld);
-    */
-
-    //potenciaAlf(alfabeto,3);
-    //potenciaAlf(alfabeto,-3);
 
     return 0;
 }
@@ -99,6 +60,11 @@ void lecturaAlf(){
         lecturaInd(alfabeto);
     }
 
+    impresionAlfabeto(alfabeto);
+    string aux;
+    cout << "Ingrese cualquier tecla para continuar: ";
+    cin>>aux;
+
     menuProc();
 }
 
@@ -135,22 +101,83 @@ void menuProc(){
         cout << "5. Salir" << endl;
         cout << "Opcion: ";
         cin>>op;
-    }while(op<1 || op>3);
+    }while(op<1 || op>5);
     if(op==1){
         cout << "Introduza dos cadenas, ambas formadas con elementos del alfabeto generado" << endl;
         do{
             cout << "Ingresa la cadena 1: ";
-            cin>>w1;
+            getline(cin,w1);
+            getline(cin,w1);
         }while(!validacionCad(alfabeto,w1));
         do{
             cout << "Ingresa la cadena 2: ";
-            cin>>w2;
+            getline(cin,w2);
         }while(!validacionCad(alfabeto,w2));
         
+        cout << endl;
+
+        if(esPrefijo(w1,w2))
+            cout << "W1 es prefijo de W2" << endl;
+        if(esPrefPropio(w1,w2))
+            cout << "W1 es prefijo propio de W2" << endl;
+        if(esSufijo(w1,w2))
+            cout << "W1 es sufijo de W2" << endl;
+        if(esSufPropio(w1,w2))
+            cout << "W1 es sufijo propio de W2" << endl;
+        if(esSubcadena(w1,w2))
+            cout << "W1 es subcadena de W2" << endl;
+        if(esSubsecuencia(w1,w2))
+            cout << "W1 es subsecuencia de W2" << endl;
+
+        string aux;
+        cout << "Ingrese cualquier tecla para continuar: ";
+        cin>>aux;
     }
+    else if(op == 2){
+        int np,l;
+        cout << "Se van a generar dos lenguajes" << endl;
+        cout << "Ingrese el numero de palabras de cada lenguaje: ";
+        cin>>np;
+        cout << "Ingrese la longitud de sus palabras: ";
+        cin>>l;
+
+        generaLenguaje(l1,alfabeto,np,l);
+        generaLenguaje(l2,alfabeto,np,l);
+
+        cout << "Los elementos del primer lenguaje son:\n";
+        imprimeLenguaje(l1);
+        cout << "\nLos elementos del segundo lenguaje son:\n";
+        imprimeLenguaje(l2);
+
+        cout << "\nSe va a generar la diferencia Ld(L1-L2)" << endl;
+        difLenguaje(l1,l2,ld);
+        imprimeLenguaje(ld);
+
+        string aux;
+        cout << "Ingrese cualquier tecla para continuar: ";
+        cin>>aux;
+    }
+    else if(op == 3){
+        int n;
+        cout << "Se va a obtener la potencia de un alfabeto, ingrese un numero entre -5 y 5: ";
+        cin >> n;
+        potenciaAlf(n);
+
+        string aux;
+        cout << "Ingrese cualquier tecla para continuar: ";
+        cin>>aux;
+    }
+    else if(op==4){
+        menu();
+    }
+    else{
+        exit(0);
+    }
+
+    menuProc();
 }
 
-void potenciaAlf(sc alfabeto, int n){
+void potenciaAlf(int n){
     if(n>5 || n<-5){
         cout << "Rango no valido" << endl;
         return;

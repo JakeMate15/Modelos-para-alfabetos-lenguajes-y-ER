@@ -6,6 +6,7 @@ typedef set<char> sc;
 typedef set<string> ss;
 
 void lecturaInd(sc &alfabeto){
+    alfabeto.clear();
     char lectura;
     while(cin>>lectura){
         alfabeto.insert(lectura);
@@ -16,6 +17,7 @@ void lecturaInd(sc &alfabeto){
 
 void lecturaRango(sc &alfabeto) {
     char l, r;
+    alfabeto.clear();
     
     do{
         cout << "Ingresa los rangos: ";
@@ -37,6 +39,7 @@ void impresionAlfabeto(const sc &alfabeto){
 }
 
 bool validacionCad(const sc &alfabeto, string s){
+    if(s=="")   return true;
     for(char c: s){
         if(!alfabeto.count(c))  
             return false;
@@ -49,9 +52,14 @@ bool esPrefijo(string w1,string w2){
     return w2.find(w1)==0;
 }
 
-bool esSufijo(string w1,string w2){
-    return (w2.find(w1) == w2.size() - w1.size()) || w1=="6";
+bool esSufijo(string w1, string w2) {
+    int n = w1.length();
+    if (w2.length() < n) {
+        return false;
+    }
+    return w2.compare(w2.length() - n, n, w1) == 0;
 }
+
 
 bool esPrefPropio(string w1,string w2){
     return esPrefijo(w1, w2) && w1 != w2 && w1!="";
@@ -94,6 +102,13 @@ void generaLenguaje(ss &l1, const sc &alfabeto, int np, int l){
         }
         l1.insert(palabra);
     }
+}
+
+void imprimeLenguaje(const ss& l){
+    for(string s: l){
+        cout << s << " ";
+    }
+    cout << endl;
 }
 
 void difLenguaje(const ss &l1, const ss &l2, ss &ld){
