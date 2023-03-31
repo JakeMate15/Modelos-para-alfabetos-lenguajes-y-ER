@@ -24,5 +24,6 @@ void generaLenguaje(ss&, const sc&, int, int);
 void difLenguaje(const ss&, const ss&, ss&);
 void potencia(const sc&, ss&, int, string);
 void potN(const ss&);
+bool manejoExpresionRegular(string);
 
 #endif

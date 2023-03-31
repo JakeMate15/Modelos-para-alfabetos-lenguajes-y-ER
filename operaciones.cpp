@@ -131,3 +131,18 @@ void potN(const ss &p){
 
     cout << endl;
 }
+
+bool manejoExpresionRegular(string palabra){
+    regex er("(((?=.*[a])[a-d|f-h|j-n|p-t|v-z]+)((?=.*[e])[b-d|e-h|j-n|p-t|v-z]+)((?=.*[i])[b-d|f-h|i-n|p-t|v-z]+)((?=.*[o])[b-d|f-h|j-n|o-t|v-z]+)((?=.*[u])[b-d|f-h|j-n|p-t|u-z]+))+");
+    /*
+    (
+        ((?=.*[a])[a-d|f-h|j-n|p-t|v-z]+)
+        ((?=.*[e])[b-d|e-h|j-n|p-t|v-z]+)
+        ((?=.*[i])[b-d|f-h|i-n|p-t|v-z]+)
+        ((?=.*[o])[b-d|f-h|j-n|o-t|v-z]+)
+        ((?=.*[u])[b-d|f-h|j-n|p-t|u-z]+)
+    )+
+    */
+   
+    return(regex_match(palabra, er));
+}
