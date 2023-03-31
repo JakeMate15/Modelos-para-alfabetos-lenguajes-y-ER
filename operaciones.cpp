@@ -7,8 +7,13 @@ typedef set<string> ss;
 
 void lecturaInd(sc &alfabeto){
     alfabeto.clear();
+    
     char lectura;
-    while(cin>>lectura){
+    cin.get(lectura);
+    while(cin.get(lectura)){
+        if (lectura == '\n') {
+            break;
+        }
         alfabeto.insert(lectura);
     }
 
