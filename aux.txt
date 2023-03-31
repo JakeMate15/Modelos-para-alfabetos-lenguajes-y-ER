@@ -1,0 +1,45 @@
+(b-d|f-h|j-n|p-t|v-z)
+([b-d]|[f-h]|[j-n]|[p-t]|[v-z]|a)+([b-d]|[f-h]|[j-n]|[p-t]|[v-z]|e)+([b-d]|[f-h]|[j-n]|[p-t]|[v-z]|i)+([b-d]|[f-h]|[j-n]|[p-t]|[v-z]|o)+([b-d]|[f-h]|[j-n]|[p-t]|[v-z]|u)+
+
+
+(([b-d|f-h|j-n|p-t|v-z]*|a)+([b-d|f-h|j-n|p-t|v-z]*|e)+([b-d|f-h|j-n|p-t|v-z]*|i)+([b-d|f-h|j-n|p-t|v-z]*|o)+([b-d|f-h|j-n|p-t|v-z]*|u)+)+
+
+( (consonante|a)+ (consonante|e)+ (consonante|i)+ (consonante|o)+ (consonante|u)+ )+
+
+
+( 
+    (([b-d]|[f-h]|[j-n]|[p-t]|[v-z])|a)+ 
+    (([b-d]|[f-h]|[j-n]|[p-t]|[v-z])|e)+ 
+    (([b-d]|[f-h]|[j-n]|[p-t]|[v-z])|i)+ 
+    (([b-d]|[f-h]|[j-n]|[p-t]|[v-z])|o)+ 
+    (([b-d]|[f-h]|[j-n]|[p-t]|[v-z])|u)+ 
+)+
+
+
+[ab-d|f-h|j-n|p-t|v-z]+
+[b-d|ef-h|j-n|p-t|v-z]+
+[b-d|f-h|ij-n|p-t|v-z]+
+[b-d|f-h|j-n|op-t|v-z]+
+[b-d|f-h|j-n|p-t|uv-z]+
+
+[b-d|f-h|j-n|p-t|v-z]+
+[b-d|f-h|j-n|p-t|v-z]+
+[b-d|f-h|j-n|p-t|v-z]+
+[b-d|f-h|j-n|p-t|v-z]+
+[b-d|f-h|j-n|p-t|v-z]+
+
+[a-d|f-h|j-n|p-t|v-z]+
+[b-d|e-h|j-n|p-t|v-z]+
+[b-d|f-h|i-n|p-t|v-z]+
+[b-d|f-h|j-n|o-t|v-z]+
+[b-d|f-h|j-n|p-t|u-z]+
+
+[^aeiou]*[a][^aeiou]*[^aeiou]*[e][^aeiou]*[^aeiou]*[i][^aeiou]*[^aeiou]*[o][^aeiou]*[^aeiou]*[u][^aeiou]*
+
+
+(?=.*[e])
+
+    //regex patron("(("+c+"*|a)+("+c+"*|e)+("+c+"*|i)+("+c+"*|o)+("+c+"*|u)+)+");
+    //regex patron("(([b-d|f-h|j-n|p-t|v-z]|a+)+([b-d|f-h|j-n|p-t|v-z]|e+)+([b-d|f-h|j-n|p-t|v-z]|i+)+([b-d|f-h|j-n|p-t|v-z]|o+)+([b-d|f-h|j-n|p-t|v-z]|u+)+)+"
+
+((?=.*[a])[a-d|f-h|j-n|p-t|v-z]+)((?=.*[e])[b-d|e-h|j-n|p-t|v-z]+)((?=.*[i])[b-d|f-h|i-n|p-t|v-z]+)((?=.*[o])[b-d|f-h|j-n|o-t|v-z]+)((?=.*[u])[b-d|f-h|j-n|p-t|u-z]+)
